@@ -1,5 +1,13 @@
 <?php
 
+$image = (bool) get_query_var( 'ucfwp_image_behind_nav', false );
+
+$container_class = 'header-gradient';
+
+if ( !$image ) {
+	$container_class = 'bg-inverse';
+}
+
 $header_img = get_field( 'theme_header', 'option' ) ?? AIRFORCEWP_THEME_IMG_URL . '/rotc-logo.png';
 $header_text = get_bloginfo( 'name' );
 $header_subtext = get_bloginfo( 'description' );
@@ -19,7 +27,7 @@ $menu = wp_nav_menu( array(
 ?>
 
 <!-- set bg  -->
-<div class="bg-inverse">
+<div class="<?php echo $container_class; ?> header-wrapper">
 
 	<!-- header image  -->
 	<?php if ( $header_img ): ?>
@@ -30,8 +38,8 @@ $menu = wp_nav_menu( array(
 
 	<!-- header -text -->
 	<div>
-		<h1 class="h3 text-center"><span class="font-serif"><?php echo $header_text; ?></span></h1>
-		<h6 class="text-center font-weight-normal"><?php echo $header_subtext; ?></h6>
+		<h1 class="h3 text-center text-white"><span class="font-serif"><?php echo $header_text; ?></span></h1>
+		<h6 class="text-white text-center font-weight-normal"><?php echo $header_subtext; ?></h6>
 	</div>
 
 	<div class="container">
