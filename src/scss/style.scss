@@ -21,4 +21,31 @@
 //
 
 // Add/import your theme's custom styles here
-// ...
+
+.header-img {
+  width: 59px;
+  height: 80px;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.bg-metallic-other {
+  background-color: rgb(164, 140, 108);
+}
+
+.text-metallic-other {
+  color: rgb(164, 140, 108);
+}
+
+.navbar-nav .nav-link.airforce-link {
+  text-transform: none;
+  font-weight: 400;
+}
+
+.navbar-nav .nav-link.airforce-link.active {
+  background-color: rgba(255,255,255,.15);
+}
+
+#header-menu {
+  width: 100%;
+}
